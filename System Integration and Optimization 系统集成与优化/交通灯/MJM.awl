@@ -1,0 +1,54 @@
+ORGANIZATION_BLOCK MAIN:OB1
+TITLE=³ÌÐò×¢ÊÍ
+BEGIN
+Network 1 
+// ³ÌÐò¶Î×¢ÊÍ
+LD     I0.0
+AN     I0.1
+S      M0.0, 1
+Network 2 
+LD     M0.0
+AN     T37
+TON    T37, 150
+Network 3 
+LD     M0.0
+LPS
+AW<=   T37, 50
+=      Q0.0
+LRD
+AW>=   T37, 50
+AW<=   T37, 80
+A      SM0.5
+=      Q0.1
+LRD
+AW>=   T37, 80
+=      Q0.2
+LRD
+AW>=   T37, 80
+AW<=   T37, 120
+=      Q0.3
+LRD
+AW>=   T37, 120
+AW<=   T37, 150
+A      SM0.5
+=      Q0.4
+LPP
+AW<=   T37, 80
+=      Q0.5
+Network 4 
+LD     I0.1
+R      M0.0, 1
+R      T37, 1
+END_ORGANIZATION_BLOCK
+SUBROUTINE_BLOCK SBR_0:SBR0
+TITLE=×Ó³ÌÐò×¢ÊÍ
+BEGIN
+Network 1 
+// ³ÌÐò¶Î×¢ÊÍ
+END_SUBROUTINE_BLOCK
+INTERRUPT_BLOCK INT_0:INT0
+TITLE=ÖÐ¶ÏÀý³Ì×¢ÊÍ
+BEGIN
+Network 1 
+// ³ÌÐò¶Î×¢ÊÍ
+END_INTERRUPT_BLOCK
